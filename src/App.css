@@ -1,5 +1,6 @@
 .screen {
-  height: 100vh;
+  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,7 +22,10 @@
   background: #6c5ce7;
   color: #fff;
   font-weight: 600;
+  font-size: 1rem;
   cursor: pointer;
+  min-height: 44px;
+  touch-action: manipulation;
 }
 
 .screen button:hover {
@@ -106,4 +110,53 @@
 
 .closer-progress {
   opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+  .screen {
+    gap: 0.75rem;
+    padding: 1.25rem 1rem calc(1.25rem + env(safe-area-inset-bottom));
+    justify-content: flex-start;
+    padding-top: 2rem;
+  }
+
+  .screen h1 {
+    font-size: 2rem;
+  }
+
+  .category-picker {
+    grid-template-columns: 1fr;
+    padding: 0.75rem;
+  }
+
+  .category-row {
+    padding: 0.7rem 0.6rem;
+    font-size: 1rem;
+  }
+
+  .category-row input {
+    width: 1.15rem;
+    height: 1.15rem;
+  }
+
+  .screen button {
+    width: 100%;
+  }
+
+  .closer-card {
+    padding: 2rem 1.25rem;
+    gap: 1.25rem;
+    justify-content: center;
+    flex: 1;
+  }
+
+  .closer-controls {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .closer-controls .closer-progress {
+    order: -1;
+  }
 }
